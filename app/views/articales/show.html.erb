@@ -1,0 +1,12 @@
+<h1><%= @articale.title %></h1>
+
+<p><%= @articale.body %></p>
+
+<% if @articale.image.present? %>
+  <%= image_tag @articale.image.url %>
+<% end %>
+
+<p><strong>Published:</strong> <%= @articale.published ? "Yes" : "No" %></p>
+
+<%= link_to 'Edit', edit_articale_path(@articale) if @articale.user == current_user %> |
+<%= link_to 'Back', articales_path %>

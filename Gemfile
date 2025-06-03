@@ -67,3 +67,5 @@ gem "annotaterb", "~> 4.15"
 gem "devise", "~> 4.9"
 
 gem "pundit", "~> 2.5"
+
+gem "carrierwave", "~> 3.1"
