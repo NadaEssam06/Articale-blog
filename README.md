@@ -12,11 +12,11 @@
 - Modern styled UI with **custom CSS**
 - SVG icons for actions like edit, delete, report
 
-##💎 Versions
+## 💎 Versions
 
 - Ruby: `3.4.4` 
 - Rails: `8.0.2`
-##💎 Key Gems
+## 💎 Key Gems
 
 - devise – User authentication
 - pundit – Authorization
