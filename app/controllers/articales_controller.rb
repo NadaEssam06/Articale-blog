@@ -69,7 +69,7 @@ class ArticalesController < ApplicationController
   def unarchive
     authorize @articale
     @articale.update(archived: false)
-    redirect_to archived_articales_path, notice: "Article has been unarchived."
+    redirect_to articales_path, notice: "Article has been unarchived."
   end
   private
 

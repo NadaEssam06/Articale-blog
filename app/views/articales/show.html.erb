@@ -1,16 +1,40 @@
-<h1><%= @articale.title %></h1>
+<div class="container">
 
-<p><%= @articale.body %></p>
+  <div class= "article-card">
 
-<% if @articale.image.present? %>
-  <%= image_tag @articale.image.url %>
-<% end %>
+    <% if @articale.user == current_user %>
+      <%= link_to edit_articale_path(@articale),class:"archive-link" do %> 
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-pencil"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>      <%end%>
+      <%= button_to @articale, method: :delete,
+      form: { class: "inline-form" },
+      class: "btn-orange",
+      data: { turbo_confirm: "Are you sure?" } do %>
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 6a1 1 0 0 1 .117 1.993l-.117 .007h-.081l-.919 11a3 3 0 0 1 -2.824 2.995l-.176 .005h-8c-1.598 0 -2.904 -1.249 -2.992 -2.75l-.005 -.167l-.923 -11.083h-.08a1 1 0 0 1 -.117 -1.993l.117 -.007h16z" /><path d="M14 2a2 2 0 0 1 2 2a1 1 0 0 1 -1.993 .117l-.007 -.117h-4l-.007 .117a1 1 0 0 1 -1.993 -.117a2 2 0 0 1 1.85 -1.995l.15 -.005h4z" /></svg>
+      <% end %>
+    <% end %>
+  <%if @articale.user != current_user%>
+    <%= button_to  report_articale_path(@articale), method: :patch,
+    form: { class: "inline-form" },class: "btn-report", 
+    data: { turbo_confirm: "Are you sure you want to report this article?" } do%>
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="red"  class="icon icon-tabler icons-tabler-filled icon-tabler-flag-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M19 4a1 1 0 0 1 .993 .883l.007 .117v9a1 1 0 0 1 -.883 .993l-.117 .007h-13v6a1 1 0 0 1 -.883 .993l-.117 .007a1 1 0 0 1 -.993 -.883l-.007 -.117v-16a1 1 0 0 1 .883 -.993l.117 -.007h14z" /></svg>
+    <%end%>
+  <%end%>
+ 
+  <h1><%= @articale.title %></h1>
+
+  <p><%= @articale.body %></p>
+
+  <% if @articale.image.present? %>
+      <img src="<%= @articale.image.url %>" class="article-image" />            
+  <% end %>
 
 
-<p><strong>Published:</strong> <%= @articale.published ? "Yes" : "No" %></p>
+  <p><strong>Published:</strong> <%= @articale.published ? "Yes" : "No" %></p>
 
-<%= link_to 'Edit', edit_articale_path(@articale) if @articale.user == current_user %> |
-<%= link_to 'Back', articales_path %>
-<%= button_to "Delete", @articale, method: :delete, data: { turbo_confirm: "Are you sure?" } if @articale.user == current_user  %>
-<%= button_to 'Report Article', report_articale_path(@articale), method: :patch, data: { turbo_confirm: "Are you sure you want to report this article?" }, class: "btn btn-danger" if @articale.user != current_user%>
+ 
+</div>
+  <%= link_to  articales_path do %>
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>
+  <%end%>
 
+</div>

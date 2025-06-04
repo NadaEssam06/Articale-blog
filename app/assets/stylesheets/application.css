@@ -1,10 +1,134 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* General layout */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fef9f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* Header */
+.container h1 {
+  font-size: 2.5rem;
+  color: #ff6a00;
+  margin-bottom: 20px;
+}
+
+/* Link to create new article */
+.container a {
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #ff6a00;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.container a:hover {
+  background-color: #e55b00;
+}
+
+/* Article cards */
+.article-card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #ff6a00;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-3px);
+}
+
+.article-card h2 {
+  margin-top: 0;
+  color: #e55b00;
+}
+
+.article-card p {
+  color: #555;
+}
+
+/* Article image */
+.article-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+.new-article-link,
+.archive-link {
+  background-color: #ff6a00;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s ease;
+}
+
+.new-article-link:hover,
+.archive-link:hover {
+  background-color: #e55b00;
+}
+.btn-orange,
+.btn-report {
+  background-color: #ff6a00;
+  color: white;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-report {
+  background-color: inherit;
+  color: red;
+}
+.btn-report:hover {
+  transform: translateY(-2px);
+}
+.btn-orange:hover,
+.archive-link:hover {
+  background-color: #e55b00;
+  transform: translateY(-2px);
+}
+
+.btn-orange:active {
+  transform: scale(0.98);
+}
+.inline-form {
+  display: inline;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .article-card {
+    padding: 15px;
+  }
+}

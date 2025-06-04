@@ -1,11 +1,4 @@
 /* Reset and base layout */
-body {
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background-color: #f4f6f8;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
 
 .container {
   max-width: 960px;
@@ -117,11 +110,3 @@ form {
 }
 
 /* Links */
-a {
-  color: #2563eb;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
