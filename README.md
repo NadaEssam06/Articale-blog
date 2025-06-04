@@ -1,24 +1,35 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 📝 Ruby on Rails Blog Application
+r
+A simple blog application built with Ruby on Rails. Users can create, edit, delete, report, and archive articles.
 
-Things you may want to cover:
+## 🚀 Features
 
-* Ruby version
+- User Authentication with **Devise**
+- Authorization using **Pundit**
+- Image uploads using **CarrierWave**
+- Article reporting and auto-archiving
+- Archived article management
+- Modern styled UI with **custom CSS**
+- SVG icons for actions like edit, delete, report
 
-* System dependencies
+##💎 Versions
 
-* Configuration
+- Ruby: `3.4.4` 
+- Rails: `8.0.2`
+##💎 Key Gems
 
-* Database creation
+- devise – User authentication
+- pundit – Authorization
+- carrierwave – File uploads
 
-* Database initialization
 
-* How to run the test suite
+## 🔐 Authorization with Pundit
 
-* Services (job queues, cache servers, search engines, etc.)
+- Fine-grained permissions with `ArticalePolicy`
+- Users can only:
+  - Edit/Delete **their own articles**
+  - View **published articles** unless they are the author
+  - Report or unarchive if signed in
 
-* Deployment instructions
 
-* ...
