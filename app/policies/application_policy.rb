@@ -35,6 +35,10 @@ class ApplicationPolicy
   def destroy?
     false
   end
+  
+  def unarchive?
+    user == record.user
+  end
 
   class Scope
     def initialize(user, scope)

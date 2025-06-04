@@ -1,0 +1,12 @@
+<h1>Archived Articles</h1>
+
+<% @articales.each do |articale| %>
+  <div class="article-card">
+    <h2><%= articale.title %></h2>
+    <p><%= truncate(articale.body, length: 100) %></p>
+
+    <%= button_to "Unarchive", unarchive_articale_path(articale), method: :patch %>
+  </div>
+<% end %>
+
+<%= link_to "Back to Home", articales_path %>

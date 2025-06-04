@@ -4,5 +4,8 @@ class Articale < ApplicationRecord
   def published?
     published == true
   end
+  def archived?
+    report_number == 3
+  end
 
 end

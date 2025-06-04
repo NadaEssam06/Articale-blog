@@ -12,6 +12,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :articales
-
+  resources :articales do
+    # one page
+    collection do
+      get :archived
+    end
+    #for each articale
+    member do
+      patch :report
+    end
+    member do
+      patch :unarchive
+    end
+  end
+  
 end
