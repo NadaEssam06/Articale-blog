@@ -1,7 +1,6 @@
 
 # 📝 Ruby on Rails Blog Application
-r
-A simple blog application built with Ruby on Rails. Users can create, edit, delete, report, and archive articles.
+ simple blog application built with Ruby on Rails. Users can create, edit, delete, report, and archive articles.
 
 ## 🚀 Features
 
