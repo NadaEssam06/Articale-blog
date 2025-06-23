@@ -29,6 +29,6 @@
 - Users can only:
   - Edit/Delete **their own articles**
   - View **published articles** unless they are the author
-  - Report or unarchive if signed in
+  - Report/unarchive actions are limited to signed-in users
 
 
